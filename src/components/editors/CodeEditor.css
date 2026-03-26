@@ -1,0 +1,25 @@
+.code-editor-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-wrapper {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Monaco Editor already has its own scrolling */
+.monaco-editor {
+  overflow: hidden !important;
+}
+
+.monaco-editor .overflow-guard {
+  overflow: hidden !important;
+}

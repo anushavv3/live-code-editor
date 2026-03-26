@@ -1,34 +1,113 @@
 # Live Code Editor
+#  XentariCode - Professional Live Code Editor
 
-[![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
-[![Monaco Editor](https://img.shields.io/badge/Monaco-Editor-green)](https://microsoft.github.io/monaco-editor/)
+![XentariCode](https://img.shields.io/badge/version-1.0.0-blue)
+![React](https://img.shields.io/badge/React-18.2.0-61dafb)
+![Monaco Editor](https://img.shields.io/badge/Monaco-Editor-007acc)
 
-A powerful online code editor with live preview for HTML, CSS, and JavaScript. Built with React and Monaco Editor.
+**XentariCode** is a professional online code editor that lets you write HTML, CSS, and JavaScript with instant live preview. Built with React and Monaco Editor (the engine behind VS Code).
 
-## ✨ Features
+##  Features
 
-- 📝 Write HTML, CSS, and JavaScript with syntax highlighting
-- 👁️ Live preview updates as you type
-- 💾 Save code snippets locally
-- 🔗 Share your code via URL
-- 📱 Responsive design (works on mobile)
-- 🎨 Three layout modes (side-by-side, editor-only, preview-only)
+### Core Features
+-  **Three Language Editors** - HTML, CSS, JavaScript with syntax highlighting
+-  **Live Preview** - See changes instantly in the iframe preview
+-  **Multiple Layouts** - Split view, editor-only, preview-only modes
+-  **Save Snippets** - Store your code locally and load anytime
+-  **Share via URL** - Share your code with a single click
+-  **Download HTML** - Export your project as a single HTML file
+-  **Console Output** - Real-time JavaScript console logs
+-  **Theme Support** - Dark, Light, and High Contrast modes
+-  **Font Size Control** - Customize editor font size (12px-18px)
 
-## 🚀 Demo
+### Professional Features
+-  **File Tabs** - Separate tabs for HTML, CSS, JavaScript
+-  **Keyboard Shortcuts** - Ctrl+S to save, and more
+-  **Responsive Design** - Works on desktop, tablet, and mobile
+-  **Modern UI** - Professional dark theme with smooth animations
+-  **Secure Preview** - iframe sandbox for safe code execution
 
-[Live Demo](your-deployed-link-here)
+##  Quick Start
 
-## 🛠️ Tech Stack
+### Prerequisites
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-- React.js
-- Monaco Editor
-- LocalStorage API
-- CSS3
-
-## 📦 Installation
+### Installation
 
 ```bash
-git clone https://github.com/your-username/live-code-editor.git
-cd live-code-editor
+# Clone the repository
+git clone https://github.com/yourusername/xentaricode.git
+
+# Navigate to project
+cd xentaricode
+
+# Install dependencies
 npm install
+
+# Start development server
 npm start
+
+##  Tech Stack
+
+**Frontend:**
+- **React** 18.2.0 - UI Framework for component-based architecture
+- **Monaco Editor** - Code editor engine from VS Code with syntax highlighting
+- **CSS3** - Custom styling, animations, and responsive layouts
+
+**Key Dependencies:**
+- `react: ^18.2.0`
+- `@monaco-editor/react: ^4.6.0`
+- `react-scripts: 5.0.1`
+
+
+##  Development Tools
+
+- **Create React App** - Project scaffolding and build configuration
+- **npm** - Package management
+- **Git** - Version control
+- **VS Code** - Code editor
+
+
+##  Responsive Design
+
+**Breakpoints:**
+- **Desktop** (>1024px) - Side-by-side editor and preview panels
+- **Tablet** (768px - 1024px) - Stacked toolbar, flexible panels
+- **Mobile** (<768px) - Vertical stacked layout
+
+ ## Deployment
+
+
+ ##live demo
+*URL:** [https://xentaricode.netlify.app](https://xentaricode.netlify.app)
+
+
+## 👨‍💻 Author
+
+**Your Name**
+
+- GitHub: [@yourusername](https://github.com/anushavv3)
+
+- Email: anushavv3@gmail.com
+
+## 🙏 Acknowledgments
+
+**Open Source Libraries**
+
+- React - UI framework by Facebook
+- Monaco Editor - Code editor engine by Microsoft
+- Create React App - Project scaffolding tool
+
+**Inspiration**
+
+- VS Code - Design inspiration and Monaco Editor source
+- CodePen - Live preview concept
+- JSFiddle - Code sharing functionality
+
+**Special Thanks**
+
+- Open source community for amazing tools and libraries
+- All contributors who help improve this project
+- Users who provide feedback and suggestions
+- Microsoft for creating and maintaining Monaco Editor
