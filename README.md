@@ -27,7 +27,7 @@
 -  **Secure Preview** - iframe sandbox for safe code execution
 
 ## Live Demo
- [https://anushavv3.github.io/live-code-editor/](https://anushavv3.github.io/live-code-editor/)
+ [xentaricode](https://anushavv3.github.io/live-code-editor/)
 
 ##  Quick Start
 
