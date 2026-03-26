@@ -1,4 +1,3 @@
-# Live Code Editor
 #  XentariCode - Professional Live Code Editor
 
 ![XentariCode](https://img.shields.io/badge/version-1.0.0-blue)
@@ -27,6 +26,9 @@
 -  **Modern UI** - Professional dark theme with smooth animations
 -  **Secure Preview** - iframe sandbox for safe code execution
 
+## Live Demo
+ [https://anushavv3.github.io/live-code-editor/](https://anushavv3.github.io/live-code-editor/)
+
 ##  Quick Start
 
 ### Prerequisites
@@ -37,11 +39,11 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/anushavv3/live-code-editor
-.git
+git clone https://github.com/anushavv3/live-code-editor.git
+
 
 # Navigate to project
-cd xentaricode
+cd live-code-editor
 
 # Install dependencies
 npm install
@@ -77,9 +79,6 @@ npm start
 - **Desktop** (>1024px) - Side-by-side editor and preview panels
 - **Tablet** (768px - 1024px) - Stacked toolbar, flexible panels
 - **Mobile** (<768px) - Vertical stacked layout
-
-## Live Demo
- [XentariCode](https://github.com/anushavv3/live-code-editor)
 
 
 ##  Author
