@@ -37,7 +37,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/xentaricode.git
+git clone https://github.com/anushavv3/live-code-editor
+.git
 
 # Navigate to project
 cd xentaricode
@@ -78,14 +79,14 @@ npm start
 - **Mobile** (<768px) - Vertical stacked layout
 
 ## Live Demo
- []()
+ [XentariCode](https://github.com/anushavv3/live-code-editor)
 
 
 ##  Author
 
 **Anusha V V**
 
-- GitHub: [@yourusername](https://github.com/anushavv3)
+- GitHub: [@anushavv3](https://github.com/anushavv3)
 
 - Email: anushavv3@gmail.com
 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "XentariCode - Professional online code editor with live preview",
   "author": "anusha",
-  "homepage": "https://xentaricode.com",
+  "homepage": " https://anushavv3.github.io/live-code-editor",
   "private": true,
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
@@ -14,8 +14,9 @@
     "react-split-pane": "^0.1.92",
     "uuid": "^9.0.1"
   },
-
-  "homepage": "https://anushavv3.github.io/xentaricode",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
