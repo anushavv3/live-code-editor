@@ -77,22 +77,19 @@ npm start
 - **Tablet** (768px - 1024px) - Stacked toolbar, flexible panels
 - **Mobile** (<768px) - Vertical stacked layout
 
- ## Deployment
+## Live Demo
+ [https://xentaricode.netlify.app](https://xentaricode.netlify.app)
 
 
- ##live demo
-*URL:** [https://xentaricode.netlify.app](https://xentaricode.netlify.app)
+## 👨 Author
 
-
-## 👨‍💻 Author
-
-**Your Name**
+**Anusha V V**
 
 - GitHub: [@yourusername](https://github.com/anushavv3)
 
 - Email: anushavv3@gmail.com
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 **Open Source Libraries**
 
@@ -106,9 +103,3 @@ npm start
 - CodePen - Live preview concept
 - JSFiddle - Code sharing functionality
 
-**Special Thanks**
-
-- Open source community for amazing tools and libraries
-- All contributors who help improve this project
-- Users who provide feedback and suggestions
-- Microsoft for creating and maintaining Monaco Editor
