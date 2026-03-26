@@ -15,7 +15,7 @@
   position: relative;
 }
 
-/* Monaco Editor already has its own scrolling */
+
 .monaco-editor {
   overflow: hidden !important;
 }
