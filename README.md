@@ -47,8 +47,9 @@ npm install
 
 # Start development server
 npm start
----
-##Tech Stack
+```
+## Tech Stack
+
 
 **Frontend:**
 - **React** 18.2.0 - UI Framework for component-based architecture
