@@ -78,10 +78,10 @@ npm start
 - **Mobile** (<768px) - Vertical stacked layout
 
 ## Live Demo
- [https://xentaricode.netlify.app](https://xentaricode.netlify.app)
+ []()
 
 
-## 👨 Author
+##  Author
 
 **Anusha V V**
 
