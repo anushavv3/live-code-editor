@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/xentaricode/static/css/main.d3750922.css",
+    "main.js": "/xentaricode/static/js/main.4c15e81d.js",
+    "index.html": "/xentaricode/index.html",
+    "main.d3750922.css.map": "/xentaricode/static/css/main.d3750922.css.map",
+    "main.4c15e81d.js.map": "/xentaricode/static/js/main.4c15e81d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d3750922.css",
+    "static/js/main.4c15e81d.js"
+  ]
+}
