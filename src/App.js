@@ -475,11 +475,7 @@ button:hover {
         onReset={resetToTemplate}
       />
       
-      {isMobile && (
-        <div className="mobile-hint">
-          <span>📱 Tap the editor to start typing. Pinch to zoom if needed.</span>
-        </div>
-      )}
+      
       
       <div className="file-tabs">
         <button 
