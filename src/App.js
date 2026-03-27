@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import CodeEditor from './components/editor/CodeEditor';
+import CodeEditor from './components/editors/CodeEditor';
 import LivePreview from './components/preview/LivePreview';
 import Toolbar from './components/toolbar/Toolbar';
 import ConsolePanel from './components/console/ConsolePanel';
