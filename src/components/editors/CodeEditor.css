@@ -5,6 +5,7 @@
   background: #1e1e1e;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .editor-wrapper {
@@ -13,36 +14,41 @@
   width: 100%;
   overflow: hidden;
   position: relative;
+  min-height: 200px;
+}
+
+/* Force Monaco editor to fill container */
+.editor-wrapper > div {
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .monaco-editor {
   overflow: hidden !important;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .monaco-editor .overflow-guard {
   overflow: hidden !important;
+  height: 100% !important;
+  width: 100% !important;
 }
 
-/* Mobile editor wrapper */
+/* Mobile specific fixes */
 @media (max-width: 768px) {
   .editor-wrapper {
-    height: 400px;
-    min-height: 400px;
-    width: 100%;
+    min-height: 300px;
+    height: auto;
   }
   
-  .monaco-editor .cursor {
-    width: 2px !important;
+  .code-editor-container {
+    min-height: 300px;
   }
   
-  .monaco-editor .line-numbers {
-    font-size: 12px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .editor-wrapper {
-    height: 350px;
-    min-height: 350px;
+  /* Force reflow on mobile */
+  .monaco-editor .monaco-scrollable-element {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 }

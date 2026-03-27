@@ -6,6 +6,9 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -14,6 +17,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-y: auto;
   background: #1e1e1e;
+  height: 100%;
+  position: relative;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .app {
@@ -21,16 +32,8 @@ body {
   display: flex;
   flex-direction: column;
   background: #1e1e1e;
-}
-
-/* Mobile Hint */
-.mobile-hint {
-  background: #4ec9b0;
-  color: #1e1e1e;
-  text-align: center;
-  padding: 8px;
-  font-size: 12px;
-  font-weight: 500;
+  flex: 1;
+  position: relative;
 }
 
 /* File Tabs */
@@ -44,6 +47,7 @@ body {
   overflow-y: hidden;
   flex-shrink: 0;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .file-tabs::-webkit-scrollbar {
@@ -71,7 +75,11 @@ body {
   font-weight: 500;
   white-space: nowrap;
   flex-shrink: 0;
-  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tab:active {
+  transform: scale(0.98);
 }
 
 .tab:hover {
@@ -89,9 +97,10 @@ body {
 .main-content {
   flex: 1;
   display: flex;
-  min-height: 500px;
+  min-height: 300px;
   background: #1e1e1e;
   overflow: auto;
+  position: relative;
 }
 
 /* Editor Section */
@@ -99,8 +108,9 @@ body {
   display: flex;
   flex-direction: column;
   background: #1e1e1e;
-  overflow: auto;
-  min-height: 400px;
+  overflow: hidden;
+  min-height: 250px;
+  position: relative;
 }
 
 .editor-section.split {
@@ -117,8 +127,9 @@ body {
   display: flex;
   flex-direction: column;
   background: white;
-  overflow: auto;
-  min-height: 400px;
+  overflow: hidden;
+  min-height: 250px;
+  position: relative;
 }
 
 .preview-section.split {
@@ -162,13 +173,13 @@ body {
 
 .modal-content input {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   background: #3c3c3c;
   border: 1px solid #3e3e42;
   color: white;
   border-radius: 6px;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .modal-content input:focus {
@@ -183,13 +194,12 @@ body {
 }
 
 .modal-actions button {
-  padding: 10px 16px;
+  padding: 8px 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
   transition: all 0.2s;
-  min-height: 44px;
 }
 
 .modal-actions .save-btn {
@@ -208,8 +218,8 @@ body {
 
 /* Global Scrollbar Styles */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -218,7 +228,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #3e3e42;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -229,118 +239,17 @@ body {
   background: #1e1e1e;
 }
 
-/* ==================== MOBILE OPTIMIZATIONS ==================== */
-
-/* Small Mobile Devices (max-width: 768px) */
-@media (max-width: 768px) {
-  .file-tabs {
-    padding: 0 8px;
-  }
-  
-  .tab {
-    padding: 12px 16px;
-    font-size: 14px;
-  }
-  
-  .editor-section,
-  .preview-section {
-    min-height: 400px;
-  }
-  
-  .console-panel {
-    max-height: 200px;
-  }
-  
-  .console-content {
-    font-size: 11px;
-  }
-  
-  .snippets-panel {
-    max-height: 120px;
-  }
-}
-
-/* Extra Small Mobile (max-width: 480px) */
-@media (max-width: 480px) {
-  .editor-section,
-  .preview-section {
-    min-height: 350px;
-  }
-  
-  .console-content {
-    font-size: 10px;
-  }
-  
-  .console-entry {
-    gap: 6px;
-  }
-  
-  .snippet-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  
-  .snippet-actions {
-    width: 100%;
-    justify-content: flex-end;
-  }
-  
-  .modal-content {
-    width: 90%;
-    margin: 20px;
-    padding: 20px;
-  }
-  
-  .modal-content input {
-    font-size: 16px;
-  }
-}
-
-/* Touch Device Optimizations */
-@media (hover: none) and (pointer: coarse) {
-  button,
-  .tab,
-  .footer-link,
-  .layout-btn,
-  .snippet-actions button {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  button:hover,
-  .tab:hover,
-  .layout-btn:hover {
-    transform: none;
-  }
-  
-  button:active,
-  .tab:active,
-  .layout-btn:active {
-    opacity: 0.7;
-    transition: opacity 0.1s;
-  }
-}
-
-/* Landscape Mode on Mobile */
-@media (max-width: 900px) and (orientation: landscape) {
-  .editor-section,
-  .preview-section {
-    min-height: 250px;
-  }
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .main-content {
     flex-direction: column;
-    min-height: 300px;
+    min-height: 500px;
   }
   
   .editor-section.split,
   .preview-section.split {
     width: 100%;
-    min-height: 300px;
+    min-height: 350px;
   }
   
   .file-tabs {
@@ -351,4 +260,32 @@ body {
     padding: 8px 12px;
     font-size: 12px;
   }
+  
+  /* Ensure editors have proper height on mobile */
+  .editor-section,
+  .preview-section {
+    min-height: 350px;
+  }
+}
+
+/* Fix for small devices */
+@media (max-width: 480px) {
+  .editor-section,
+  .preview-section {
+    min-height: 300px;
+  }
+  
+  .tab {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+/* Fix for Monaco editor rendering */
+.monaco-editor .view-overlays .current-line {
+  border-width: 0 !important;
+}
+
+.monaco-editor .margin {
+  background: transparent !important;
 }

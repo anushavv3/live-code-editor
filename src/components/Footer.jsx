@@ -8,11 +8,13 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-info">
-          <span className="footer-copyright">© {currentYear} XentariCode. All rights reserved.</span>
+          <span className="footer-copyright">© {2026} XentariCode All Right Reserved. </span>
+          
+          
         </div>
         
         <div className="footer-links">
-          <a href="https://github.com/ivy" target="_blank" rel="noopener noreferrer" className="footer-link">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="footer-link">
             GitHub
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="footer-link">

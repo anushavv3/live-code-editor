@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Editor from '@monaco-editor/react';
 
 const JSEditor = ({ value, onChange, theme, fontSize }) => {
+  const editorRef = useRef(null);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleEditorDidMount = (editor, monaco) => {
+    editorRef.current = editor;
+    setTimeout(() => editor.layout(), 100);
+    window.addEventListener('resize', () => setTimeout(() => editor.layout(), 100));
+  };
+
   return (
     <div className="editor-wrapper">
       <Editor
@@ -10,25 +28,31 @@ const JSEditor = ({ value, onChange, theme, fontSize }) => {
         value={value}
         onChange={(value) => onChange(value || '')}
         theme={theme}
+        onMount={handleEditorDidMount}
         options={{
           minimap: { enabled: false },
-          fontSize: fontSize,
+          fontSize: isMobile ? Math.max(12, fontSize - 2) : fontSize,
           wordWrap: 'on',
-          lineNumbers: 'on',
+          lineNumbers: isMobile ? 'off' : 'on',
           automaticLayout: true,
           tabSize: 2,
           formatOnPaste: true,
           formatOnType: true,
           scrollBeyondLastLine: false,
           renderWhitespace: 'boundary',
-          readOnly: false,
-          contextmenu: false,
+          folding: !isMobile,
+          glyphMargin: !isMobile,
+          lineDecorationsWidth: isMobile ? 0 : undefined,
+          lineNumbersMinChars: isMobile ? 2 : 5,
+          renderLineHighlight: isMobile ? 'none' : 'line',
+          overviewRulerBorder: false,
+          hideCursorInOverviewRuler: isMobile,
           scrollbar: {
-            vertical: 'auto',
-            horizontal: 'auto',
+            vertical: isMobile ? 'auto' : 'visible',
+            horizontal: isMobile ? 'auto' : 'visible',
             useShadows: false,
-            verticalHasArrows: true,
-            horizontalHasArrows: true
+            verticalScrollbarSize: isMobile ? 8 : 12,
+            horizontalScrollbarSize: isMobile ? 8 : 12
           }
         }}
       />
