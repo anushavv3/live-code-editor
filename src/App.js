@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import CodeEditor from './components/editors/CodeEditor';
+import CodeEditor from './components/editor/CodeEditor';
 import LivePreview from './components/preview/LivePreview';
 import Toolbar from './components/toolbar/Toolbar';
 import ConsolePanel from './components/console/ConsolePanel';
@@ -22,13 +22,23 @@ function App() {
   const [showSaveModal, setShowSaveModal] = useState(false);
   const [activeFile, setActiveFile] = useState('html');
   const [snippetName, setSnippetName] = useState('');
+  const [isMobile, setIsMobile] = useState(false);
   
   const iframeRef = useRef(null);
+
+  // Check if mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     document.title = "XentariCode - Live Code Editor";
     
-    // HTML Template - Simple button
     setHtml(`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,17 +50,12 @@ function App() {
     <div class="container">
         <h1>Welcome to XentariCode</h1>
         <p>Edit the code on the left to see changes</p>
-        
-        <button id="clickMeBtn" class="demo-button">
-            Click Me!
-        </button>
-        
+        <button id="clickMeBtn" class="demo-button">Click Me!</button>
         <div id="messageBox" class="message-box"></div>
     </div>
 </body>
 </html>`);
 
-    // CSS Template
     setCss(`* {
     margin: 0;
     padding: 0;
@@ -154,13 +159,7 @@ p {
     }
 }`);
 
-    // JavaScript Template - Works on first click
-    setJs(`// XentariCode Interactive Demo
-console.log('XentariCode is ready!');
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded - Setting up button');
-    
+    setJs(`document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById('clickMeBtn');
     const messageBox = document.getElementById('messageBox');
     
@@ -176,14 +175,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (button) {
         button.onclick = function() {
-            console.log('Button clicked!');
             alert('Hello from XentariCode!');
-            showMessage('✨ Welcome to XentariCode.');
+            showMessage('Welcome to XentariCode.');
         };
     }
-});
-
-console.log('Ready to go!');`);
+});`);
   }, []);
 
   const getCombinedHtml = () => {
@@ -191,7 +187,7 @@ console.log('Ready to go!');`);
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <style>
       html {
         scroll-behavior: smooth;
@@ -201,6 +197,10 @@ console.log('Ready to go!');`);
         padding: 0;
         box-sizing: border-box;
       }
+      button {
+        min-height: 44px;
+        min-width: 44px;
+      }
     </style>
     <style>${css}</style>
 </head>
@@ -208,7 +208,6 @@ console.log('Ready to go!');`);
     ${html}
     <script>
       (function() {
-        // Capture console logs
         const originalLog = console.log;
         const originalError = console.error;
         const originalWarn = console.warn;
@@ -233,19 +232,12 @@ console.log('Ready to go!');`);
           }
           originalWarn.apply(console, args);
         };
-        
-        console.log('Preview iframe loaded');
       })();
     </script>
     <script>
-      // Simple button handler - Works on first click
       document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM loaded');
-        
         const button = document.getElementById('clickMeBtn');
         const messageBox = document.getElementById('messageBox');
-        
-        console.log('Button exists:', !!button);
         
         function showMessage(text) {
           if (messageBox) {
@@ -260,9 +252,8 @@ console.log('Ready to go!');`);
         if (button) {
           button.onclick = function(e) {
             e.preventDefault();
-            console.log('Button clicked - Alert should show');
             alert('Hello from XentariCode!');
-            showMessage('✨ Welcome to XentariCode.');
+            showMessage('Welcome to XentariCode.');
           };
         }
       });
@@ -421,6 +412,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
+    min-height: 44px;
+    min-width: 44px;
 }
 
 button:hover {
@@ -481,6 +474,12 @@ button:hover {
         onShare={shareCode}
         onReset={resetToTemplate}
       />
+      
+      {isMobile && (
+        <div className="mobile-hint">
+          <span>📱 Tap the editor to start typing. Pinch to zoom if needed.</span>
+        </div>
+      )}
       
       <div className="file-tabs">
         <button 

@@ -20,7 +20,16 @@ const JSEditor = ({ value, onChange, theme, fontSize }) => {
           formatOnPaste: true,
           formatOnType: true,
           scrollBeyondLastLine: false,
-          renderWhitespace: 'boundary'
+          renderWhitespace: 'boundary',
+          readOnly: false,
+          contextmenu: false,
+          scrollbar: {
+            vertical: 'auto',
+            horizontal: 'auto',
+            useShadows: false,
+            verticalHasArrows: true,
+            horizontalHasArrows: true
+          }
         }}
       />
     </div>

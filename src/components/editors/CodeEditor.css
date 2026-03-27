@@ -15,11 +15,34 @@
   position: relative;
 }
 
-
 .monaco-editor {
   overflow: hidden !important;
 }
 
 .monaco-editor .overflow-guard {
   overflow: hidden !important;
+}
+
+/* Mobile editor wrapper */
+@media (max-width: 768px) {
+  .editor-wrapper {
+    height: 400px;
+    min-height: 400px;
+    width: 100%;
+  }
+  
+  .monaco-editor .cursor {
+    width: 2px !important;
+  }
+  
+  .monaco-editor .line-numbers {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .editor-wrapper {
+    height: 350px;
+    min-height: 350px;
+  }
 }

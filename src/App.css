@@ -23,6 +23,16 @@ body {
   background: #1e1e1e;
 }
 
+/* Mobile Hint */
+.mobile-hint {
+  background: #4ec9b0;
+  color: #1e1e1e;
+  text-align: center;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 /* File Tabs */
 .file-tabs {
   background: #2d2d30;
@@ -61,6 +71,7 @@ body {
   font-weight: 500;
   white-space: nowrap;
   flex-shrink: 0;
+  min-height: 44px;
 }
 
 .tab:hover {
@@ -151,13 +162,13 @@ body {
 
 .modal-content input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background: #3c3c3c;
   border: 1px solid #3e3e42;
   color: white;
   border-radius: 6px;
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .modal-content input:focus {
@@ -172,12 +183,13 @@ body {
 }
 
 .modal-actions button {
-  padding: 8px 16px;
+  padding: 10px 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 14px;
   transition: all 0.2s;
+  min-height: 44px;
 }
 
 .modal-actions .save-btn {
@@ -215,6 +227,107 @@ body {
 
 ::-webkit-scrollbar-corner {
   background: #1e1e1e;
+}
+
+/* ==================== MOBILE OPTIMIZATIONS ==================== */
+
+/* Small Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .file-tabs {
+    padding: 0 8px;
+  }
+  
+  .tab {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .editor-section,
+  .preview-section {
+    min-height: 400px;
+  }
+  
+  .console-panel {
+    max-height: 200px;
+  }
+  
+  .console-content {
+    font-size: 11px;
+  }
+  
+  .snippets-panel {
+    max-height: 120px;
+  }
+}
+
+/* Extra Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .editor-section,
+  .preview-section {
+    min-height: 350px;
+  }
+  
+  .console-content {
+    font-size: 10px;
+  }
+  
+  .console-entry {
+    gap: 6px;
+  }
+  
+  .snippet-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .snippet-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .modal-content {
+    width: 90%;
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .modal-content input {
+    font-size: 16px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  .tab,
+  .footer-link,
+  .layout-btn,
+  .snippet-actions button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  button:hover,
+  .tab:hover,
+  .layout-btn:hover {
+    transform: none;
+  }
+  
+  button:active,
+  .tab:active,
+  .layout-btn:active {
+    opacity: 0.7;
+    transition: opacity 0.1s;
+  }
+}
+
+/* Landscape Mode on Mobile */
+@media (max-width: 900px) and (orientation: landscape) {
+  .editor-section,
+  .preview-section {
+    min-height: 250px;
+  }
 }
 
 /* Responsive Design */

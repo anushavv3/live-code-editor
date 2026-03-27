@@ -20,7 +20,7 @@
   color: #888;
 }
 
-.footer-copyright{
+.footer-copyright {
   color: #888;
 }
 
@@ -34,6 +34,11 @@
   text-decoration: none;
   font-size: 11px;
   transition: color 0.2s;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-link:hover {
@@ -48,10 +53,10 @@
   .footer-content {
     flex-direction: column;
     text-align: center;
-    gap: 6px;
+    gap: 8px;
   }
   
   .footer-links {
-    gap: 12px;
+    gap: 20px;
   }
 }
