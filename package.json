@@ -1,9 +1,9 @@
 {
   "name": "xentaricode",
-  "version": "1.0.0",
-  "description": "XentariCode - Professional online code editor with live preview",
-  "author": "anusha",
-  "homepage": " https://anushavv3.github.io/live-code-editor",
+  "version": "1.1.0",
+  "description": "XentariCode - Professional online code editor with live preview and mobile support",
+  "author": "Anusha ",
+  "homepage": "https://anushavv3.github.io/live-code-editor",
   "private": true,
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
@@ -42,4 +42,5 @@
       "last 1 safari version"
     ]
   }
+  
 }
